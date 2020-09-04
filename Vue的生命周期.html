@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生命周期钩子</title>
+</head>
+<body>
+<div id="app">
+<span id="span" @click="change">{{num}}</span>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            num:40,
+        },
+        methods:{
+            change(){
+                this.num--;
+            },
+        },
+        beforeCreate () {
+            console.log("beforeCreate:"+this.num);
+            console.log("beforeCreate:"+document.getElementById("span").innerHTML)
+        },
+        created () {
+            console.log("Created:"+this.num);
+            console.log("Created:"+document.getElementById("span").innerHTML)
+        },
+        beforeMount () {
+            console.log("beforeMount:"+this.num);
+            console.log("beforeMount:"+document.getElementById("span").innerHTML)
+        },
+        mounted(){
+            console.log("mounted:"+this.num);
+            console.log("mounted:"+document.getElementById("span").innerHTML)
+        },
+        beforeUpdate(){
+            console.log("beforeUpdate:"+this.num);
+            console.log("beforeUpdate:"+document.getElementById("span").innerHTML)
+        },
+        updated(){
+            console.log("updated:"+this.num);
+            console.log("updated:"+document.getElementById("span").innerHTML)
+        },
+        beforeDestroy(){
+
+        },
+        destroyed(){
+
+        },
+
+
+    })
+
+</script>
+
+</body>
+</html>
