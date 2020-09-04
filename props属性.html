@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <com color="red" user="郭庆生"></com>
+    <com color="blue" user="靳薛城"></com>
+    <com ></com>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    let com = {
+        template:`
+        <div >props属性测试:{{color}},{{user}}</div>
+        `,
+        props:["color","user"],
+        created(){
+            console.log(this.color,this.user)
+        },
+        data: function () {
+
+        }
+    }
+    new Vue({
+        el: "#app",
+        data: {},
+        components:{
+            "com":com
+        }
+    })
+</script>
+
+</body>
+</html>
