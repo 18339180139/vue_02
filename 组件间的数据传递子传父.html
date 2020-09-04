@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p>这是父标签：{{username}}</p>
+    <com @btn = "clickMe"></com>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    let com = {
+        template:`
+        <button @click="clickBtn">这是子标签</button>
+        `,
+        methods:{
+            clickBtn(){
+                this.$emit("btn","百知教育")
+            }
+        }
+    }
+    new Vue({
+        el: "#app",
+        data: {
+            username:""
+        },
+        components:{
+            "com":com
+        },
+        methods: {
+            clickMe(username){
+                console.log(username);
+                this.username=username;
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
