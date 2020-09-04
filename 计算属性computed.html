@@ -6,20 +6,27 @@
 </head>
 <body>
 <div id="app">
-    {{message}}
+    <p @click="change_message">{{num}}</p>
     <br>
-    <input type="button" value="点击" @click="change_message">
+    <p>十位：{{shi}}</p>
+    <p>个位：{{ge}}</p>
+
 </div>
 <script src="js/vue.min.js"></script>
+<!--普通方法写-->
 <script>
     new Vue({
         el: "#app",
         data: {
-            message: "1"
+            num: "98",
+            ge:"",
+            shi:"",
         },
         methods: {
             change_message() {
-
+                this.num--;
+                this.shi=parseInt(this.num/10);
+                this.ge=this.num%10;
             }
         }
     })
