@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数特性</title>
+    <script>
+        let user ={
+            username:"小黑",
+            app:function () {
+                console.log(this.username)
+            }
+        }
+        user.app()
+        let user1 = {
+            username:"薛靳城",
+            app1:function () {
+                setTimeout(function () {
+                    console.log(this.username)
+                }, 1000)
+            }
+        }
+        user1.app1()
+        let user2 = {
+            username:"郭庆生",
+            app2:function () {
+                setInterval( ()=> {
+                    console.log(this.username)
+                },1000)
+            }
+        }
+        user2.app2()
+    </script>
+</head>
+<body>
+
+</body>
+</html>
