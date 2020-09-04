@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件中的data的使用</title>
+</head>
+<body>
+<div id="app">
+    <com></com>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    let com = {
+        template: `
+        <div>组件中data的使用：{{username}}</div>
+        `,
+        data: function () {
+            return{
+                username:"郭庆生"
+            }
+        }
+    }
+    Vue.component("com",com)
+    new Vue({
+        el:"#app",
+        data:{
+            age:18,
+        }
+    })
+</script>
+</body>
+</html>
